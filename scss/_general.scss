@@ -1,0 +1,8 @@
+/* ESTILO GENERAL */
+body {
+  font-family: "Rubik", sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  // background: linear-gradient(135deg, $color1, $color3);
+}
