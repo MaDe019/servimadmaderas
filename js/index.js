@@ -1,10 +1,10 @@
 let prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
+window.addEventListener("scroll", function () {
   let currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
-    document.getElementById("header").style.display = "block";
+    document.getElementById("header").classList.add("oculto");
   } else {
-    document.getElementById("header").style.display = "none";
+    document.getElementById("header").classList.remove("oculto");
   }
   prevScrollpos = currentScrollPos;
-};
+});
