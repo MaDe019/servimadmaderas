@@ -16,11 +16,19 @@ body {
   text-decoration: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* reset de estilos precargados navegador */
 * {
   margin: 0;
   padding: 0;
   list-style: none;
+  text-decoration: none;
+}
+
+a {
   text-decoration: none;
 }
 
@@ -47,6 +55,19 @@ body {
   .btn {
     max-width: 40%;
   }
+}
+/* ESTILO HEADER */
+header {
+  background-color: rgb(255, 255, 255);
+  /* para que la barra quede fija cuando hacemos scroll */
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+  box-shadow: -5px 5px 15px -7px black;
+}
+header .header__brand {
+  max-height: 3rem;
+  margin: 5% auto;
 }
 
 /*# sourceMappingURL=style.css.map */
