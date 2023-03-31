@@ -1,0 +1,35 @@
+/* ESTILO FOOTER */
+footer {
+  background-color: $color4;
+  color: $color1;
+  margin-top: 2%;
+}
+
+.fa-brands,
+.fa-download {
+  color: $color2;
+  font-size: 1.5rem;
+}
+
+.footer-sm__text {
+  // font-size: 0.75rem;
+  color: $color1;
+  text-align: center;
+  font-size: smaller;
+  & a {
+    color: $color1;
+    font-weight: bolder;
+  }
+}
+
+.foter-bottom {
+  display: flex;
+  background-color: $color3;
+  color: $color1;
+  text-align: center;
+  justify-content: center;
+  font-size: smaller;
+  & i {
+    color: $color1;
+  }
+}

@@ -2,7 +2,7 @@
 @media (max-width: 768px) {
   .article__text {
     font-size: 1rem;
-    line-height: 1;
+    line-height: 1.25;
   }
 }
 
@@ -20,8 +20,9 @@
   }
 }
 
-@media (min-width: 768px) {
-  .btn {
-    max-width: 40%;
+@media (max-width: 768px) {
+  .fixed-btn {
+    bottom: 140px;
+    scale: 0.7;
   }
 }
