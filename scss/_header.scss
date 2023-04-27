@@ -1,17 +1,14 @@
 /* ESTILO HEADER */
 header {
   background-color: $color1;
+  position: sticky;
   top: 0px;
-  z-index: 2;
+  z-index: 1;
   box-shadow: -5px 5px 15px -7px $shadow-color;
+  transition: top 0.3s;
 
   .header__brand {
     max-height: 3rem;
     margin: 5% auto;
   }
-}
-
-// funcion para js que esconda el header
-.oculto {
-  position: sticky;
 }

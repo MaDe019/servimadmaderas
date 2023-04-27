@@ -43,10 +43,10 @@
 
   <body>
     <!-- header -->
-    <header id="header" class="oculto">
+    <header id="header">
       <!-- NAV BAR -->
       <div class="container-md">
-        <nav class="navbar navbar-expand-md bg-white" data-bs-theme="light">
+        <nav class="navbar">
           <div class="container-fluid">
             <!-- aca va logo con link inicio-->
             <a href="index.html"
@@ -55,37 +55,25 @@
                 alt="logo SERVIMAD"
                 class="header__brand"
             /></a>
-            <button
-              id="btn-header"
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
+            <button onclick="openNav()" class="navbar-toggler">
+              <span>&#9776;<span class="d-none d-lg-block">MENU</span></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#inicio"
-                    >Inicio</a
-                  >
+            <div class="overlay" id="myNav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+                >&times;</a
+              >
+              <ul class="overlay-content">
+                <li>
+                  <a href="#inicio" onclick="closeNav()">Inicio</a>
                 </li>
-                <li class="nav-item">
-                  <a id="nav__link" class="nav-link" href="#productos"
-                    >Productos</a
-                  >
+                <li>
+                  <a onclick="closeNav()" href="#productos">Productos</a>
                 </li>
-                <li class="nav-item">
-                  <a id="nav__link" class="nav-link" href="#contacto"
-                    >Contacto</a
-                  >
+                <li>
+                  <a onclick="closeNav()" href="#contacto">Contacto</a>
                 </li>
-                <li id="nav__link" class="nav-item">
-                  <a class="nav-link" href="#ubicacion">Ubicación</a>
+                <li>
+                  <a onclick="closeNav()" href="#ubicacion">Ubicación</a>
                 </li>
               </ul>
             </div>
@@ -103,14 +91,17 @@
         target="”_blank”"
         href="http://wa.me/5493425346718?text=Hola!%20Necesito%20información"
         ><div class="fixed-btn align-items-center">
-          <button class="wapp"><i class="bi bi-whatsapp"></i></button></div
+          <button class="wapp">
+            <i class="bi btn-wapp bi-whatsapp"></i>
+          </button></div
       ></a>
+
       <!-- sección NOSOTROS -->
       <section id="inicio" class="p-1">
-        <article class="container border border-dark rounded-3 shadow mt-2">
-          <h2 class="article__title">NOSOTROS</h2>
+        <article class="container border rounded-3 shadow mt-2">
           <div class="row align-items-center">
             <div class="col-md-6 justify-content-between">
+              <h2 class="article__title">NOSOTROS</h2>
               <p class="article__text">
                 Somos una empresa familiar, dedicada a la
                 <strong>venta de maderas, herrajes, pinturas</strong> y
@@ -132,9 +123,7 @@
 
       <!-- sección PRODUCTOS -->
       <section id="productos" class="p-1">
-        <article
-          class="container text-center border border-dark rounded-3 shadow mt-2"
-        >
+        <article class="container text-center border rounded-3 shadow mt-2">
           <div class="container p-1">
             <h2 class="article__title">PRODUCTOS</h2>
             <p class="article__text">
@@ -210,18 +199,21 @@
 
       <!-- sección CONTACTO -->
       <section id="contacto" class="p-1 border-dark">
-        <article
-          class="container text-center border border-dark rounded-3 shadow mt-2"
-        >
+        <article class="container text-center border rounded-3 shadow mt-2">
           <div class="container p-2">
             <h2 class="article__title">CONTACTO</h2>
+            <p class="article__text text-center">
+              Horario de Atención:<br />
+              Lun a Vie 8.00hs a 12.00hs y 15.00hs a 19.00hs <br />
+              Sab 8.00 a 12.15hs
+            </p>
             <div class="container text-center pt-2">
               <p class="article__text text-center">
                 <a
                   class="btn__contacto rounded-2 shadow p-1"
                   href="tel:03424749318"
                   target="”_blank”"
-                  >TEL. 0342 - 4749318</a
+                  ><i class="bi bi-telephone-fill"></i> 0342 - 4749318</a
                 >
                 <br />
                 <br />
@@ -229,7 +221,7 @@
                   class="btn__contacto rounded-2 shadow p-1"
                   target="”_blank”"
                   href="http://wa.me/5493425346718?text=Hola!%20Necesito%20información"
-                  >WHATSAPP +543425346718</a
+                  ><i class="bi bi-whatsapp"></i> +543425346718</a
                 >
                 <br />
                 <br />
@@ -238,7 +230,7 @@
                   target="”_blank”"
                   href="mailto:servi_ mad@hotmail.com"
                 >
-                  EMAIL servi_ mad@hotmail.com
+                  <i class="bi bi-envelope-at-fill"></i> servi_ mad@hotmail.com
                 </a>
               </p>
             </div>
@@ -248,25 +240,37 @@
 
       <!-- sección UBICACIÓN -->
       <section id="ubicacion" class="p-1">
-        <article
-          class="container text-center border border-dark rounded-3 shadow mt-2"
-        >
+        <article class="container text-center border rounded-3 shadow mt-2">
           <h2 class="article__title">UBICACIÓN</h2>
           <div class="pb-2">
             <p class="article__text text-center">
               <strong>AV. EJERCITO ARGENTINO 3580</strong> <br />SANTO TOME
             </p>
-            <div class="card shadow">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13582.625449569668!2d-60.78146000000001!3d-31.67062!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5a878d134ce5f%3A0xdba85f01fb9ba691!2sServi%20Mad%20S.R.L.!5e0!3m2!1ses!2sar!4v1680222160005!5m2!1ses!2sar"
-                width="600"
-                height="450"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                class="container-fluid"
-              ></iframe>
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d274.9576666712719!2d-60.781533169700914!3d-31.67057251348788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5a878d134ce5f%3A0xdba85f01fb9ba691!2sServi%20Mad%20S.R.L.!5e1!3m2!1ses!2sar!4v1682605802233!5m2!1ses!2sar"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  class="container-fluid"
+                ></iframe>
+              </div>
+              <div class="col-12 col-lg-6">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!3m2!1ses!2sar!4v1682604125277!5m2!1ses!2sar!6m8!1m7!1sp55EFf1iBjZGKvR5Li4PlQ!2m2!1d-31.67065412272331!2d-60.78148019607287!3f357.0540542523518!4f1.5702817951341785!5f0.7820865974627469"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  class="container-fluid"
+                ></iframe>
+              </div>
             </div>
           </div>
         </article>
@@ -276,19 +280,26 @@
       <!-- footer empresa -->
       <div class="container text-center pt-2">
         <p class="footer-sm__text">
-          <a href="index.html"><strong>SERVIMAD S.R.L.</strong></a> <br />
-          TEL. 0342 - 4749318 <br />
-          WHATSAPP
-          <a
-            target="”_blank”"
-            href="http://wa.me/5493425346718?text=Hola!%20Necesito%20información"
-            >+543425346718</a
+          <a href="index.html"><strong>SERVIMAD S.R.L.</strong></a>
+          <br />
+          <a class="" href="tel:03424749318" target="”_blank”"
+            ><i class="bi bi-telephone-fill"></i> 0342 - 4749318</a
           >
           <br />
-          EMAIL servi_ mad@hotmail.com <br />
-          DIRECCION AV. Ejercito Argentino 3580, (3016) Santo Tomé, Argentina.
+          <a
+            class=""
+            target="”_blank”"
+            href="http://wa.me/5493425346718?text=Hola!%20Necesito%20información"
+            ><i class="bi bi-whatsapp"></i> +543425346718</a
+          >
           <br />
-          Las imágenes publicadas son ilustrativas
+          <a class="" target="”_blank”" href="mailto:servi_ mad@hotmail.com">
+            <i class="bi bi-envelope-at-fill"></i> servi_ mad@hotmail.com </a
+          ><br />Horario de Atención:<br />
+          Lun a Vie 8.00hs a 12.00hs y 15.00hs a 19.00hs <br />
+          Sab 8.00 a 12.15hs
+          <br /><br />
+          DIRECCION AV. Ejercito Argentino 3580, (3016) Santo Tomé, Argentina.
         </p>
       </div>
       <!-- footer copy -->
@@ -300,12 +311,9 @@
               ><i class="bi bi-github"></i
             ></a>
             <a
-              href="https://www.linkedin.com/in/matias-delgado-15442483/"
+              href="https://www.linkedin.com/in/delgado-matias/"
               target="”_blank”"
               ><i class="bi bi-linkedin"></i
-            ></a>
-            <a href="https://www.instagram.com/rollertC/" target="”_blank”"
-              ><i class="bi bi-instagram"></i
             ></a>
           </span>
         </div>

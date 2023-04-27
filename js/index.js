@@ -1,31 +1,26 @@
+//esconder nav bar cuando hacemos scroll
+
 let prevScrollpos = window.pageYOffset;
-var header = document.getElementById("header");
-let showHeaderTimeout;
 
-window.addEventListener("scroll", function () {
+window.onscroll = function scrolling() {
   let currentScrollPos = window.pageYOffset;
-  if (prevScrollpos < currentScrollPos) {
-    header.classList.remove("oculto");
-    prevScrollpos = currentScrollPos;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("header").style.top = "0";
   } else {
-    header.classList.add("oculto");
-    clearTimeout(showHeaderTimeout);
-    showHeaderTimeout = setTimeout(function () {
-      header.classList.remove("oculto");
-    }, 2000);
+    document.getElementById("header").style.top = "-75px";
   }
-});
+  prevScrollpos = currentScrollPos;
+};
 
-// función para que cuando se haga click en el icono del menu hamburguesa se extienda por 3 segundos mas mostrar el header
-var btnHeader = document.getElementById("btn-header");
+// menu cortina
 
-btnHeader.addEventListener("click", function () {
-  header.classList.add("oculto");
-});
+/* Open */
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
 
-// función que se oculta header cuando haces click en uno de sus botones
-let navLink = document.getElementById("nav__link");
-
-navLink.addEventListener("click", function () {
-  header.classList.remove("oculto");
-});
+/* Close */
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+  prevScrollpos = 0;
+}

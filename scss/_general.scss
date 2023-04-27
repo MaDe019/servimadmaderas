@@ -2,25 +2,30 @@
 body {
   font-family: "Rubik", sans-serif;
   text-align: justify;
-  // display: grid;
-  // grid-template-rows: auto 1fr auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  // background: linear-gradient(135deg, $color1, $color3);
 }
 
 /* ESTILO MAIN */
+article {
+  background: linear-gradient(to top, rgb(235, 235, 235), rgb(250, 250, 250));
+}
+
 .main__title {
   margin: 2% auto;
   color: $color4;
   font-size: $title-font;
-  font-weight: bold;
+  font-weight: bolder;
+  text-shadow: 2px 2px 10px $color4;
 }
 
 .article__title {
   margin: 2% auto;
-  color: $color2;
+  color: $color4;
   font-size: $title-article-font;
   text-align: center;
+  text-shadow: 2px 2px 10px $color4;
 }
 
 .article__text {
@@ -62,7 +67,7 @@ body {
   overflow: hidden;
 }
 
-.bi-whatsapp {
+.btn-wapp {
   color: white;
   font-size: 1.75rem;
   text-align: center;
